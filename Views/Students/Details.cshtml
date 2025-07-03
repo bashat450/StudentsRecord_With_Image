@@ -1,0 +1,49 @@
+﻿@model StudentsCRUDWithImageMVC.Models.ListsModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:crimson" align="center">Student Details</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Roll No</dt>
+        <dd>@Model.RollNo</dd>
+
+        <dt>Name</dt>
+        <dd>@Model.Name</dd>
+
+        <dt>City</dt>
+        <dd>@Model.City</dd>
+
+        <dt>State</dt>
+        <dd>@Model.State</dd>
+
+        <dt>Fees</dt>
+        <dd>@Model.Fees</dd>
+
+        <dt>Joining Date</dt>
+        <dd>@Model.JoiningDate.ToShortDateString()</dd>
+
+        <dt>Photo</dt>
+        <dd>
+            @if (Model.Image != null)
+            {
+                var base64 = Convert.ToBase64String(Model.Image);
+                var imgSrc = $"data:image/jpg;base64,{base64}";
+                <img src="@imgSrc" width="100" height="100" />
+            }
+            else
+            {
+                <span>No Image</span>
+            }
+            @Html.ActionLink("Back to List", "Lists", null, new { @class = "btn btn-primary", style = "margin-left:10px;" })
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    
+</p>

@@ -1,0 +1,24 @@
+﻿@model StudentsCRUDWithImageMVC.Models.MessageModel
+
+<h2>Compose Message</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Sender Email:</label>
+        @Html.TextBoxFor(m => m.SenderEmail)
+    </div>
+    <div>
+        <label>Receiver Email:</label>
+        @Html.TextBoxFor(m => m.ReceiverEmail)
+    </div>
+    <div>
+        <label>Subject:</label>
+        @Html.TextBoxFor(m => m.Subject)
+    </div>
+    <div>
+        <label>Body:</label>
+        @Html.TextAreaFor(m => m.Body)
+    </div>
+    <input type="submit" value="Send" />
+}

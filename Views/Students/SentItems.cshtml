@@ -1,0 +1,23 @@
+﻿@model List<StudentsCRUDWithImageMVC.Models.MessageModel>
+
+<h2>Sent Items</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>To</th>
+            <th>Subject</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var msg in Model)
+        {
+            <tr>
+                <td>@msg.ReceiverEmail</td>
+                <td>@msg.Subject</td>
+                <td>@msg.SentDate.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>
